@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=10291363-afb6-4d95-8e02-dc6ef1b4daed&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "css/maps.css" %}">
+    <link rel="stylesheet" href="{% static "css/arh-oldview.css" %}">
+{% endblock style %}
+{% block body %}
+
+<div class="maps-block">
+    <div>
+        <h2 class="h2">
+            Карта населённых пунктов
+        </h2>
+        <hr class="line" style="top: 0; left: -15px;">
+    </div>
+    
+    <div id="map"></div>
+    <script >
+        ymaps.ready(init);
+        function init(){
+
+            var myMap = new ymaps.Map("map", {
+                center: [53.02712822957266, 27.551964649995742],
+                zoom: 7
+            });
+            {% for obj in  objs %}
+                var placemark = new ymaps.Placemark(
+                    [{{obj.x}}, {{obj.y}}], // Координаты маркера
+                    { 
+                        hintContent: '{{obj.name}}', // Текст подсказки
+                    },
+                    {
+                        preset: 'islands#icon', // Предустановленный стиль маркера
+                        iconColor: '#4B0082'  // Цвет маркера
+                    }
+                    );
+
+                placemark.events.add('click',function(){
+                    window.location.href = 'city-view/{{obj.id}}'
+                })
+                
+                myMap.geoObjects.add(placemark);
+            {% endfor %}
+        }   
+    </script>
+</div>
+
+{% endblock body %}

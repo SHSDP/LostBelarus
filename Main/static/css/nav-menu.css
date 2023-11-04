@@ -1,0 +1,31 @@
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 30%;
+	height: 100%;
+	padding: 15px;
+    background: #252525;
+	transform: translateX(-200%);
+	transition: transform 0.5s; 
+    font-family: Inter;
+    font-size: 1em;
+	font-weight: 300;
+    
+}
+.menu.active {
+	transform: translateX(0);
+}
+.menu li {
+	list-style-type: none;
+    margin-bottom: 1.5em;
+}
+
+.menu li a {
+	text-decoration: none;
+    color : white;
+}
+
+.menu li a:hover {
+    color : #7f7f7f
+}

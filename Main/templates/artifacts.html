@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+
+<link rel="stylesheet" href="{% static "css/artefacts.css" %}">
+
+{% endblock style %}
+{% block body %}
+    <div class="artefacts-block">
+        <div >
+            <h2 class="h2" >
+                Артефакты
+            </h2>
+            <hr class="line" style="top: 0; left: -15px;">
+        </div>
+        <div class="block-artefacts">
+            {% for obj in objs%}
+            <div class="block-artefact">
+                <a href='artifacts/{{obj.id}}'>
+                <img  src="{{obj.chapter_image}}" alt="" srcset="">
+                <p>{{obj.name | safe}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock body %}

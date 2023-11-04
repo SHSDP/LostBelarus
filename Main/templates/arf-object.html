@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+
+<link rel="stylesheet" href="{% static  "css/arf-object.css" %}">
+<link rel="stylesheet" href="{% static "css/modal-window.css" %}">
+
+{% endblock style %}
+{% block body %}
+
+    <div class="block-artefact">
+        <h1 class="h2" style="text-align: center; font-size:1.5em">
+            {{obj.name | safe}}
+        </h1>
+        <img class="image" src="{{obj.path_image}}" name='{{obj.name_image}}' autor='{{obj.autor_image}}' sourc='{{obj.sourc_image}}'>
+        <p id="overview">{{obj.overview | safe}}</p>
+        <div style="width: 100%;" >
+            <h2 class="h2" style="text-align: start;" >
+                Источники
+            </h2>
+            <hr class="line" style="top: 0; left: -15px;">
+        </div>
+        <div class="sources">
+            <p>{{obj.sources| safe}}</p>
+        </div>
+    </div>
+    {% include 'modal-window.html' %}
+    {% endblock body %}

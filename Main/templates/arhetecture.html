@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=10291363-afb6-4d95-8e02-dc6ef1b4daed&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "css/maps.css" %}">
+    <link rel="stylesheet" href="{% static "css/arh-oldview.css" %}">
+{% endblock style %}
+{% block body %}
+    <div class="maps-block">
+        <div>
+            <h2 class="h2">
+                Карта потеренной архитектуры
+            </h2>
+            <hr class="line" style="top: 0; left: -15px;">
+        </div>
+        
+        <div id="map"></div>
+        <!--<script src="{% static "javascript\init_map.js" %}"></script>-->
+        <script>
+            var dict_marker_colors = {
+                'Замок' : '#0095b6',
+                'Ратуша' : '#00FF00',
+                'Православный храм' : '#FF0000',
+                'Католический храм' : '#FFA500',
+                'Синагога' : '#8A2BE2',
+                'Дворец/Усадьба' : '#000000',
+                'Разное' : '#FFFFFF'
+            }
+
+            ymaps.ready(init);
+            function init(){
+
+                var myMap = new ymaps.Map("map", {
+                    center: [53.02712822957266, 27.551964649995742],
+                    zoom: 7
+                });
+
+                {% for obj in  objs %}
+                    var placemark = new ymaps.Placemark(
+                        [{{obj.x}}, {{obj.y}}], // Координаты маркера
+                        { 
+                            hintContent: '{{obj.name}}', // Текст подсказки
+                        },
+                        {
+                            preset: 'islands#icon', // Предустановленный стиль маркера
+                            iconColor: dict_marker_colors['{{obj.type_build}}'] , // Цвет маркера
+                            iconImageHref: '{{obj.arh_image.0.path}}',
+                            iconImageSize: [10, 10] ,
+                            iconImageOffset: [0, 0]
+
+                        }
+                        );
+
+                    placemark.events.add('click',function(){
+                        window.location.href = 'arhetecture/{{obj.id}}'
+                    })
+                    
+                    myMap.geoObjects.add(placemark);
+                {% endfor %}
+
+            }   
+        </script>
+    </div>
+{% endblock body %}

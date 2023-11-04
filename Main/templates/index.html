@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+
+{% endblock style %}
+{% block body %}
+<main class="main" id="main">
+    <h2 class="h2">
+        Разделы
+    </h2>
+    <hr class="line" style="top: 0; left: -15px;">
+
+    <div class="block-one">
+        <div class="block-chapter">
+            <a href="{% url 'arhetecture' %}">
+                <img  src="{% static "img/r-icons1.png" %}" alt="" srcset="">
+                <p>Потеренная<br> архитектура</p>
+            </a>
+        </div>
+        <div class="block-chapter">
+            <a href="{% url 'cities-views' %}">
+                <img  src="{% static "img/r-icons2.png" %}" alt="" srcset="">  
+                <p>Города<br> раньше</p>
+             </a>
+        </div>
+        <div class="block-chapter">
+            <a href="{% url 'artifacts_views' %}">
+                <img  src="{% static "img/r-icons3.png" %}" alt="" srcset="">      
+                <p>Утраченные<br> артефакты</p>
+            </a>
+        </div>
+    </div>
+
+    <section class="section-why" id="section-why">
+        <hr class="line" style="top: 0; left: -15px;">
+        <h2 class="h2">
+            Что это такое?
+        </h2>
+
+        <p class="title-text">
+            LostBelarus - Инциклопедия утраченных культурно-исторических объектов Беларуси
+        </p>
+    </section>
+</main>
+{% endblock body %}

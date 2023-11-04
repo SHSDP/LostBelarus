@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/nav-menu.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/reset.css" %}"> 
+    {% block style %}
+    {% endblock style %}  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>LostBelarus</title>
+</head>
+<body>
+    
+    <div id="hj">
+        <div class="container display-class">
+
+            <nav class="nav-menu" id="nav-menu">
+                <div class="accordion">
+                    <button class="accordion-header">LostBelarus<span class="accordion-arrow"></span>
+                    </button>
+                    
+                    <div class="accordion-content">
+                    <p><a href="{% url 'main' %}">Главная</a></p>
+                    <p><a href="#">О проекте</a></p>
+                    <p><a href="#">Авторские права</a></p>
+                    </div>
+
+                    <button class="accordion-header">Разделы<span class="accordion-arrow"></span>
+                    </button>
+                    <div class="accordion-content">
+                    <p><a href="{% url 'arhetecture' %}">Потеренная архитектура</a></p>
+                    <p><a href="{% url 'cities-views' %}">Города раньше</a></p>
+                    <p><a href="{% url 'artifacts_views' %}">Утраченные артефакты</a></p>
+                    </div>
+                </div>
+                
+                    <hr>
+
+                    <div class="link-nav-menu">
+                        <a href="#">3D туры</a>
+                        <hr class="line">
+                        <a href="#">Литература</a>
+                        <hr class="line">
+                        <a href="#">Контакты</a>
+                        <hr class="line">
+                </div>
+            </nav>
+            <div class="nav-menu-top">
+                <div class="wrapper-nav-menu">
+                    <div id="logo-block">
+                        <div class="logo">
+                            <a href="{% url 'main' %}"><span class=" logo main-color">LostBelarus</span></a>
+                        </div>
+                        <div class="btn-div">
+                            <a href="#" class="btn">наше приложение</a>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="menu-button" type="submit"><img src="{% static 'img/menu.png' %}"></button>
+                    </div>
+
+                </div>
+                {% block body %}
+                {% endblock body %}
+            </div>
+
+        </div>
+
+
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-menu display-class">
+                <div>
+                    <p>ziknm.com</p>
+                    <p>© Зикнм 2023</щ>
+                </div>
+                <div>
+                    <a href="#" class="contacts">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script src="{% static "javascript/accordion.js" %}"></script>
+    
+    {% include 'nav-menu.html' %}
+</body>
+</html>

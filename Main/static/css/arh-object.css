@@ -1,0 +1,51 @@
+.arh-object-block{
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+    align-items: center;    
+}
+
+#geo-block{
+    font-size: 1em;
+    text-align: start;
+    width: 87%;
+}
+
+#geo-block a{
+    text-decoration: none;
+
+}
+
+.arh-images{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.image{
+    width: 20%;
+    cursor: pointer;
+    filter: drop-shadow( 5px 5px 5px  rgba(0, 0, 0, .7));
+}
+
+
+
+
+.overview-block{
+    width: 80%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    margin-top: 3em;
+}
+
+
+.sources-block{
+    width: 80%;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;  
+    margin-bottom: 8em;
+    font-size: 0.7em;
+}
+

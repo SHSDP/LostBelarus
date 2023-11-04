@@ -1,0 +1,13 @@
+{% load static %}
+<div class="menu">
+	<nav>
+	   <ul>
+		<li><a href="{% url 'main'%}">Главная</a></li>
+		<li><a href="{% url 'arhetecture'%}">Потеренная архитектура</a></li>
+		<li><a href="{% url 'cities-views'%}">Города раньше</a></li>
+		<li><a href="{% url 'artifacts_views'%}">Утраченные артефакты</a></li>
+	   </ul>
+	</nav>
+</div>
+
+<script src="{% static "javascript/nav-menu.js" %}"></script>

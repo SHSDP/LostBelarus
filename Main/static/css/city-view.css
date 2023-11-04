@@ -1,0 +1,24 @@
+.view-block{
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    align-items: center;    
+}
+
+.view-images{
+    display: flex;
+    gap: 5em;
+    flex-wrap: wrap;
+    width: 100%;
+    height: max-content;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.image{
+    height: 10em;
+    cursor: pointer;
+    filter: drop-shadow( 5px 5px 5px  rgba(0, 0, 0, .7));
+}
+
+

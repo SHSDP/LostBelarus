@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/city-view.css" %}">
+    <link rel="stylesheet" href="{% static "css/modal-window.css" %}">
+{% endblock style %}
+{% block body %}
+<div class="view-block">
+    <h1 class="h2" style="text-align: center; font-size:1.5em">
+        Слуцк
+    </h1>
+    <div style="width: 100%;">
+        <h2 class="h2" >
+            Старые изображения
+        </h2>
+        <hr class="line" style="top: 0; left: -15px;">
+    </div>
+    <div class="view-images">
+        {% for img in obj %}
+            <img  class="image" src="{{img.path}}" name='{{img.name}}' autor='{{img.autor}}' sourc='{{img.sourc}}'>
+        {% endfor %}
+    </div>
+    <div style="width: 100%;">
+        <h2 class="h2" >
+            Старые планы/карты
+        </h2>
+        <hr class="line" style="top: 0; left: -15px;">
+    </div>
+    <div class="view-images">
+        {% for img in obj2 %}
+            <img  class="image" src="{{img.path}}" name='{{img.name}}' autor='{{img.autor}}' sourc='{{img.sourc}}'>
+        {% endfor %}
+    </div>
+</div>
+
+{% include 'modal-window.html' %}
+
+{% endblock body %}

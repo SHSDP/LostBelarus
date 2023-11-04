@@ -1,0 +1,31 @@
+.block-artefact{
+    display: flex;
+    flex-direction: column;
+    gap: 8em;
+    align-items: center;    
+}
+
+.image{
+    width: 50%;
+}
+
+.image:hover{
+    cursor: pointer;
+}
+
+#overview{
+    width: 80%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    margin-top: 3em;  
+}
+
+
+.sources{
+    width: 80%;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;  
+    margin-bottom: 8em;
+    font-size: 0.7em;
+}

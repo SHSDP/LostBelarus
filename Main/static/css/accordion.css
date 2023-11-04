@@ -1,0 +1,116 @@
+.accordion {
+    border-radius: 0px 0px 50px 50px;
+    /* padding-bottom: 40px; */
+    background-color: var(--silve-color);
+
+    /* position: relative; */
+    /* right: 50px; */
+}
+
+.accordion > button {
+    padding: 10px 10px;
+}
+
+.accordion-header {
+    background-color: var(--silve-color);
+    padding: 15px 0px;
+    color: #000;
+    display: flex;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    cursor: pointer;
+    width: 170px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+}
+
+.accordion-header.active, .accordion-header:hover {
+    background-color: var(--main-color);
+    color: #eee;
+}
+
+.accordion-arrow {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    border: solid #444;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: all 0.3s;
+}
+
+.active .accordion-arrow {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.active .accordion-arrow,
+.accordion-header:hover .accordion-arrow { /* изменение цвета при наведении */
+    border-color: white;
+}
+
+.accordion-content {
+    padding: 15px;
+    display: none;
+    /* background-color: #e6e6e6; */
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.accordion-content a {
+    text-decoration: none;
+    color: #000;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.accordion-content p {
+    margin: 0 0 20px 5px;
+}
+.accordion-content p:last-child {
+    margin: 0 5px;
+}
+
+.accordion-content > p > a:hover {
+    /* background-color: var(--main-color); */
+    color: var(--main-color);
+}
+
+.link-nav-menu a {
+    display: flex;
+
+    color: #252525;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+
+    padding: 10px 15px;
+}
+.link-nav-menu a:hover {
+    color: var(--main-color);
+    transition: 0.2s all ease-in-out;
+}
+
+.line {
+    width: 20px;
+    margin: 0px 0px 0px 15px;
+    background-color: var(--main-color);
+    height: 1px;
+    border: 0;
+
+    position: relative;
+    bottom: 10px;
+}
